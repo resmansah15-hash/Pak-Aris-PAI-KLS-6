@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAI Kelas 6 - Hidup Damai dengan Saling Memaafkan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                        },
+                        islamic: {
+                            gold: '#f59e0b',
+                            goldLight: '#fef3c7',
+                            blue: '#0284c7',
+                            blueDark: '#0369a1',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+        .gradient-header {
+            background: linear-gradient(135deg, #047857 0%, #0284c7 100%);
+        }
+        .btn-bounce:hover { transform: translateY(-2px); }
+        .btn-bounce:active { transform: translateY(1px); }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER NAVIGASI METRIK & PROGRESS -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <!-- Progress Bar Top -->
+        <div class="w-full bg-slate-200 h-2">
+            <div id="progress-bar" class="bg-gradient-to-r from-emerald-500 to-sky-500 h-2 transition-all duration-300 w-[6.25%]"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-600 text-white p-2 rounded-xl shadow-md">
+                    <span class="text-xl font-bold">🕊️</span>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-slate-800 leading-tight">PAI Kelas 6 SD</h1>
+                    <p class="text-xs text-brand-600 font-medium hidden sm:block">Hidup Damai dengan Saling Memaafkan</p>
+                </div>
+            </div>
+
+            <!-- Page Counter & Jump Dropdown -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <select id="section-select" onchange="jumpToSection(this.value)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-semibold py-1.5 px-2 md:px-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <option value="1">1. Beranda</option>
+                    <option value="2">2. Tujuan Pembelajaran</option>
+                    <option value="3">3. Apersepsi (Ayo Berpikir!)</option>
+                    <option value="4">4. Apa itu Maaf?</option>
+                    <option value="5">5. Apa itu Memaafkan?</option>
+                    <option value="6">6. Meminta Maaf vs Memaafkan</option>
+                    <option value="7">7. Pentingnya Penyesalan</option>
+                    <option value="8">8. Cara Meminta Maaf</option>
+                    <option value="9">9. Studi Kasus Kehidupan</option>
+                    <option value="10">10. Game: Sikap Baik?</option>
+                    <option value="11">11. Kuis Interaktif</option>
+                    <option value="12">12. Tantangan Berpikir</option>
+                    <option value="13">13. Refleksi Diri</option>
+                    <option value="14">14. Aksi Nyata (Tantangan)</option>
+                    <option value="15">15. Rangkuman Kesimpulan</option>
+                    <option value="16">16. Penutup & Sumber</option>
+                </select>
+
+                <button onclick="openModal('guide-modal')" class="bg-amber-100 hover:bg-amber-200 text-amber-800 p-2 rounded-lg text-xs md:text-sm font-semibold flex items-center space-x-1" title="Panduan Guru & Modul">
+                    <span>📚</span>
+                    <span class="hidden md:inline">Panduan & Modul</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-5xl mx-auto px-4 py-6 md:py-10 flex-grow w-full">
+
+        <!-- HALAMAN 1: BERANDA -->
+        <section id="section-1" class="section-content space-y-6">
+            <div class="gradient-header rounded-3xl p-6 md:p-12 text-white shadow-xl relative overflow-hidden text-center md:text-left">
+                <div class="relative z-10 max-w-2xl space-y-4">
+                    <span class="bg-white/20 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">Elemen Akhlak - Bab 3</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">HIDUP DAMAI DENGAN SALING MEMAAFKAN</h2>
+                    <p class="text-emerald-50 text-base md:text-lg leading-relaxed">
+                        Mewujudkan suasana sekolah dan kehidupan bermasyarakat yang tentram, harmonis, dan dipenuhi kasih sayang melalui sikap saling memaafkan.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-emerald-100 font-medium italic text-sm md:text-base">
+                        "Berani meminta maaf. Ikhlas memaafkan. Hidup menjadi damai."
+                    </div>
+                    <div class="pt-4 flex flex-wrap gap-3 justify-center md:justify-start">
+                        <button onclick="nextSection()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all btn-bounce text-lg flex items-center space-x-2">
+                            <span>▶ MULAI BELAJAR</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Visual Decoration Icons -->
+                <div class="absolute -right-10 -bottom-10 opacity-20 text-[180px] pointer-events-none select-none">
+                    🤝
+                </div>
+            </div>
+
+            <!-- Features Cards Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-3xl mb-2">🏫</div>
+                    <h3 class="font-bold text-slate-800 text-sm">Suasana Sekolah</h3>
+                    <p class="text-xs text-slate-500">Rukun bersama teman</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-3xl mb-2">🙏</div>
+                    <h3 class="font-bold text-slate-800 text-sm">Membuka Diri</h3>
+                    <p class="text-xs text-slate-500">Berani akuai salah</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-3xl mb-2">❤️</div>
+                    <h3 class="font-bold text-slate-800 text-sm">Hati Lapang</h3>
+                    <p class="text-xs text-slate-500">Tanpa dendam benci</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-3xl mb-2">🕊️</div>
+                    <h3 class="font-bold text-slate-800 text-sm">Kedamaian</h3>
+                    <p class="text-xs text-slate-500">Kehidupan harmonis</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 2: TUJUAN PEMBELAJARAN -->
+        <section id="section-2" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Tujuan Pembelajaran</h2>
+                <p class="text-slate-600 text-sm">Target capaian kompetensi siswa Kelas 6 SD pada bab ini.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 hover:border-brand-500 transition-all">
+                    <div class="bg-emerald-100 p-3 rounded-xl text-2xl">🙏</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">1. Meminta Maaf</h3>
+                        <p class="text-slate-600 text-sm mt-1">Menjelaskan arti maaf dan pentingnya meminta maaf ketika melakukan kesalahan secara tulus.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 hover:border-brand-500 transition-all">
+                    <div class="bg-rose-100 p-3 rounded-xl text-2xl">❤️</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">2. Sikap Memaafkan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Mengikhlaskan kesalahan orang lain dan menghindari rasa dendam serta kebencian.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 hover:border-brand-500 transition-all">
+                    <div class="bg-sky-100 p-3 rounded-xl text-2xl">💭</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">3. Menyatakan Penyesalan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Memahami pentingnya rasa menyesal dan berkomitmen tidak mengulangi kesalahan.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 hover:border-brand-500 transition-all">
+                    <div class="bg-amber-100 p-3 rounded-xl text-2xl">🤝</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">4. Menjaga Persahabatan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Menunjukkan sikap rendah hati, bertanggung jawab, dan mempererat tali silaturahmi.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4 md:col-span-2 hover:border-brand-500 transition-all">
+                    <div class="bg-indigo-100 p-3 rounded-xl text-2xl">🕊️</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">5. Aplikasi Dalam Kehidupan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Menerapkan Perilaku Saling Memaafkan secara konsisten di lingkungan keluarga, sekolah, dan masyarakat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 3: APERSEPSI (AYO BERPIKIR!) -->
+        <section id="section-3" class="section-content hidden space-y-6">
+            <div class="bg-amber-500 text-white rounded-2xl p-6 shadow-md flex items-center justify-between">
+                <div>
+                    <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Pantik Diskusi</span>
+                    <h2 class="text-2xl font-bold mt-2">AYO BERPIKIR! 🤔</h2>
+                    <p class="text-amber-100 text-sm">Refleksikan pengalamanmu sebelum kita mendalami materi.</p>
+                </div>
+                <div class="text-5xl hidden sm:block">💡</div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <ol class="space-y-3 list-decimal list-inside text-slate-700 font-medium">
+                    <li class="p-3 bg-slate-50 rounded-xl">Pernahkah kamu tidak sengaja melakukan kesalahan kepada temanmu?</li>
+                    <li class="p-3 bg-slate-50 rounded-xl">Apa yang kamu rasakan dan lakukan setelah menyadari kesalahan tersebut?</li>
+                    <li class="p-3 bg-slate-50 rounded-xl">Bagaimana perasaanmu ketika ada teman yang dengan tulus meminta maaf padamu?</li>
+                    <li class="p-3 bg-slate-50 rounded-xl">Menurutmu, mengapa memaafkan kadang terasa sulit dilakukan?</li>
+                    <li class="p-3 bg-slate-50 rounded-xl">Mengapa manusia perlu saling memaafkan agar bisa hidup damai?</li>
+                </ol>
+
+                <div class="pt-4 border-t border-slate-100">
+                    <button onclick="toggleAnswer('apersepsi-discussion')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center space-x-2">
+                        <span>💡 LIHAT PEMBAHASAN APERSEPSI</span>
+                    </button>
+                    <div id="apersepsi-discussion" class="hidden mt-4 p-5 bg-emerald-50 rounded-2xl border border-emerald-200 text-slate-700 text-sm space-y-2">
+                        <p class="font-bold text-brand-800">Penjelasan Guru:</p>
+                        <p>Sebagai manusia biasa, kita pasti pernah melakukan kesalahan, sengaja maupun tidak sengaja. Perasaan bersalah adalah pertanda hati nurani kita berfungsi dengan baik.</p>
+                        <p>Meminta maaf membutuhkan keberanian dan kerendahan hati, sedangkan memaafkan membutuhkan kelapangan dada dan keikhlasan. Keduanya adalah kunci utama agar hubungan antar sesama tetap harmonis dan tidak dibayangi rasa dendam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 4: APA ITU MAAF? -->
+        <section id="section-4" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Apa Itu Maaf?</h2>
+                <p class="text-slate-600 text-sm">Memahami ungkapan penyesalan atas kesalahan.</p>
+            </div>
+
+            <!-- Material Card -->
+            <div class="bg-gradient-to-br from-emerald-50 to-sky-50 border border-emerald-200 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <div class="text-4xl">🙏</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-emerald-900">Pengertian Maaf:</h3>
+                        <p class="text-slate-700 text-base md:text-lg mt-2 font-medium leading-relaxed">
+                            "Maaf adalah ungkapan yang disampaikan seseorang ketika menyadari bahwa dirinya telah melakukan kesalahan atau kekhilafan kepada orang lain."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dialog Interactive Box -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <h3 class="font-bold text-slate-800 border-b pb-2">Contoh Percakapan di Sekolah:</h3>
+                <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-sky-500 text-white font-bold text-xs p-2 rounded-lg">Siswa A</div>
+                        <div class="bg-sky-50 p-3 rounded-2xl text-slate-800 text-sm max-w-md">
+                            "Maaf ya Budi, tadi saya tidak sengaja menyenggol tempat pensilmu sampai jatuh dan patah."
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 flex-row-reverse space-x-reverse">
+                        <div class="bg-emerald-600 text-white font-bold text-xs p-2 rounded-lg">Siswa B</div>
+                        <div class="bg-emerald-50 p-3 rounded-2xl text-slate-800 text-sm max-w-md">
+                            "Iya tidak apa-apa, saya maafkan. Lain kali lebih hati-hati ya."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Check Interactive Question -->
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <p class="font-bold text-slate-800 text-sm mb-3">Pertanyaan Interaktif:</p>
+                    <p class="text-slate-700 text-sm mb-4">Menurutmu, apakah cara Siswa A meminta maaf tersebut sudah menunjukkan sikap yang baik?</p>
+
+                    <div class="flex space-x-4">
+                        <button onclick="checkQuickAnswer(true)" class="flex-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-bold py-2.5 rounded-xl border border-emerald-300">A. Ya, Sangat Baik</button>
+                        <button onclick="checkQuickAnswer(false)" class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold py-2.5 rounded-xl border border-rose-300">B. Tidak Baik</button>
+                    </div>
+                    <div id="quick-feedback" class="hidden mt-3 p-3 rounded-xl text-sm font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 5: APA ITU MEMAAFKAN? -->
+        <section id="section-5" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Apa Itu Memaafkan?</h2>
+                <p class="text-slate-600 text-sm">Kemuliaan hati mengikhlaskan kesalahan orang lain.</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-start space-x-4">
+                    <div class="text-4xl">❤️</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-indigo-900">Pengertian Memaafkan:</h3>
+                        <p class="text-slate-700 text-base md:text-lg mt-2 font-medium leading-relaxed">
+                            "Memaafkan adalah sikap mengikhlaskan kesalahan orang lain dan tidak menyimpan rasa dendam atau kebencian di dalam hati."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Cards Concept Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-500 transition-all">
+                    <div class="text-3xl mb-2">❤️</div>
+                    <h3 class="font-bold text-slate-800 text-base">Mengikhlaskan</h3>
+                    <p class="text-slate-600 text-sm mt-1">Melepaskan rasa marah dan kecewa dari dalam dada demi ketenangan jiwa.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-500 transition-all">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h3 class="font-bold text-slate-800 text-base">Menerima Permintaan Maaf</h3>
+                    <p class="text-slate-600 text-sm mt-1">Menyambut ikhtiar baik teman yang menyesal tanpa menghakimi berlebihan.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-500 transition-all">
+                    <div class="text-3xl mb-2">🕊️</div>
+                    <h3 class="font-bold text-slate-800 text-base">Tanpa Dendam</h3>
+                    <p class="text-slate-600 text-sm mt-1">Tidak membalas perbuatan buruk atau berniat membalas dendam di kemudian hari.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-500 transition-all">
+                    <div class="text-3xl mb-2">😊</div>
+                    <h3 class="font-bold text-slate-800 text-base">Menjaga Hubungan Baik</h3>
+                    <p class="text-slate-600 text-sm mt-1">Tetap berteman dan bersilaturahmi sebagaimana mestinya tanpa ada sekat canggung.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 6: MEMINTA MAAF VS MEMAAFKAN -->
+        <section id="section-6" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Meminta Maaf vs Memaafkan</h2>
+                <p class="text-slate-600 text-sm">Perbandingan dua sisi mulia dalam menciptakan kedamaian.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Meminta Maaf Box -->
+                <div class="bg-white rounded-2xl border-2 border-sky-200 shadow-sm overflow-hidden">
+                    <div class="bg-sky-600 text-white p-4 font-bold text-lg flex items-center justify-between">
+                        <span>MEMINTA MAAF</span>
+                        <span>🙏</span>
+                    </div>
+                    <ul class="p-5 space-y-3 text-slate-700 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-sky-500 font-bold">✓</span>
+                            <span><strong>Mengakui kesalahan</strong> yang telah diperbuat.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-sky-500 font-bold">✓</span>
+                            <span><strong>Menyesali</strong> akibat buruk dari tindakan tersebut.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-sky-500 font-bold">✓</span>
+                            <span><strong>Memohon kerelaan</strong> agar kesalahan dimaafkan.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-sky-500 font-bold">✓</span>
+                            <span><strong>Berkomitmen</strong> untuk tidak mengulanginya lagi.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Memaafkan Box -->
+                <div class="bg-white rounded-2xl border-2 border-emerald-200 shadow-sm overflow-hidden">
+                    <div class="bg-emerald-600 text-white p-4 font-bold text-lg flex items-center justify-between">
+                        <span>MEMAAFKAN</span>
+                        <span>❤️</span>
+                    </div>
+                    <ul class="p-5 space-y-3 text-slate-700 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-emerald-500 font-bold">✓</span>
+                            <span><strong>Menerima</strong> permohonan maaf dengan senyuman.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-emerald-500 font-bold">✓</span>
+                            <span><strong>Mengikhlaskan</strong> kekhilafan yang terjadi.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-emerald-500 font-bold">✓</span>
+                            <span><strong>Menghapus rasa dendam</strong> dan kejengkolan.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-emerald-500 font-bold">✓</span>
+                            <span><strong>Melanjutkan persahabatan</strong> secara harmonis.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 7: PENTINGNYA MENYATAKAN PENYESALAN -->
+        <section id="section-7" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Pentingnya Menyatakan Penyesalan</h2>
+                <p class="text-slate-600 text-sm">Mengapa penyesalan merupakan landasan keikhlasan?</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm leading-relaxed text-slate-700">
+                <p class="text-base font-semibold text-brand-800 mb-4">
+                    "Menyatakan penyesalan berarti mengakui bahwa perbuatan yang kita lakukan adalah salah dan menunjukkan keinginan sungguh-sungguh untuk memperbaikinya."
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">1️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Sadar Kesalahan</h4>
+                        <p class="text-xs text-slate-600 mt-1">Bukti bahwa kita memiliki nurani yang peka.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">2️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Tanda Ketulusan</h4>
+                        <p class="text-xs text-slate-600 mt-1">Membuat orang lain yakin bahwa kita bersungguh-sungguh.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">3️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Memperbaiki Hubungan</h4>
+                        <p class="text-xs text-slate-600 mt-1">Menghilangkan ketegangan dan kecanggungan.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">4️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Melatih Tanggung Jawab</h4>
+                        <p class="text-xs text-slate-600 mt-1">Belajar berani menanggung akibat perbuatan.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">5️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Menciptakan Kedamaian</h4>
+                        <p class="text-xs text-slate-600 mt-1">Suasana sekitar menjadi hangat dan tenteram.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl hover:shadow-md transition-all">
+                        <div class="text-2xl mb-2">6️⃣</div>
+                        <h4 class="font-bold text-slate-800 text-sm">Pencegah Pengulangan</h4>
+                        <p class="text-xs text-slate-600 mt-1">Mendorong diri untuk lebih berhati-hati kelak.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 8: CARA MEMINTA MAAF DENGAN BAIK -->
+        <section id="section-8" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">5 Langkah Meminta Maaf dengan Tulus</h2>
+                <p class="text-slate-600 text-sm">Roadmap / Panduan praktis tata cara meminta maaf.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Step 1 -->
+                <div class="bg-white p-5 rounded-2xl border-l-8 border-sky-500 shadow-sm flex items-start space-x-4">
+                    <div class="bg-sky-100 text-sky-800 font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0">1</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">Akui Kesalahan Dengan Jujur</h3>
+                        <p class="text-slate-600 text-sm mt-1">Berani mengakui perbuatan tanpa berbelit-belit atau mencari alasan pembenaran.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-5 rounded-2xl border-l-8 border-emerald-500 shadow-sm flex items-start space-x-4">
+                    <div class="bg-emerald-100 text-emerald-800 font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0">2</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">Ucapkan Maaf Dengan Tulus & Sopan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Gunakan perkataan yang ramah, tatap mata orangnya, dan sampaikan dari dalam hati.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-5 rounded-2xl border-l-8 border-amber-500 shadow-sm flex items-start space-x-4">
+                    <div class="bg-amber-100 text-amber-800 font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0">3</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">Jangan Menyalahkan Orang Lain</h3>
+                        <p class="text-slate-600 text-sm mt-1">Hindari kalimat seperti: "Aku melakukan ini gara-gara kamu ya!" Bertanggungjawablah penuh.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-5 rounded-2xl border-l-8 border-indigo-500 shadow-sm flex items-start space-x-4">
+                    <div class="bg-indigo-100 text-indigo-800 font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0">4</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">Usahakan Perbaiki Kesalahan</h3>
+                        <p class="text-slate-600 text-sm mt-1">Jika merusakkan barang, tawarkan ganti rugi atau bantu memperbaikinya.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-white p-5 rounded-2xl border-l-8 border-rose-500 shadow-sm flex items-start space-x-4">
+                    <div class="bg-rose-100 text-rose-800 font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0">5</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-base">Berjanji & Berusaha Tidak Mengulangi</h3>
+                        <p class="text-slate-600 text-sm mt-1">Buktikan dengan tindakan nyata bahwa kamu benar-benar telah berubah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 9: CONTOH DALAM KEHIDUPAN -->
+        <section id="section-9" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Simulasi Kasus Kehidupan</h2>
+                <p class="text-slate-600 text-sm">Pilihlah tindakan terpuji dalam berbagai situasi berikut.</p>
+            </div>
+
+            <!-- Interactive Scenario Widget -->
+            <div id="scenario-container" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <!-- Dynamic Content Loaded JS -->
+            </div>
+        </section>
+
+        <!-- HALAMAN 10: GAME INTERAKTIF -->
+        <section id="section-10" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Game: Sikap Baik atau Bukan? 🎮</h2>
+                <p class="text-slate-600 text-sm">Klasifikasikan tindakan berikut dengan menekan tombol yang tepat!</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex justify-between items-center bg-slate-100 p-4 rounded-xl">
+                    <span class="font-bold text-slate-700">Skor Game: <span id="game-score" class="text-brand-600 text-xl">0</span> / 8</span>
+                    <button onclick="resetGame()" class="text-xs bg-slate-200 hover:bg-slate-300 px-3 py-1.5 rounded-lg font-semibold">🔄 Reset Game</button>
+                </div>
+
+                <div id="game-card-container" class="space-y-4">
+                    <!-- Dynamic game card inserted by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 11: KUIS INTERAKTIF -->
+        <section id="section-11" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Kuis Evaluasi Pembelajaran</h2>
+                <p class="text-slate-600 text-sm">Uji pemahamanmu tentang materi Hidup Damai dengan Saling Memaafkan.</p>
+            </div>
+
+            <div id="quiz-start-screen" class="bg-white p-8 rounded-2xl border border-slate-200 text-center space-y-4 shadow-sm">
+                <div class="text-5xl">📝</div>
+                <h3 class="text-2xl font-bold text-slate-800">Kuis PAI Kelas 6 SD</h3>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Kuis terdiri dari 10 soal pilihan ganda. Isilah identitasmu di bawah ini sebelum memulai.</p>
+                
+                <div class="max-w-md mx-auto space-y-3 text-left">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap:</label>
+                        <input type="text" id="quiz-student-name" placeholder="Masukkan namamu..." class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kelas:</label>
+                        <input type="text" id="quiz-student-class" value="6 SD" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                    </div>
+                </div>
+
+                <button onclick="startQuiz()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-8 rounded-xl shadow-md btn-bounce mt-4">
+                    🚀 MULAI KERJAKAN KUIS
+                </button>
+            </div>
+
+            <!-- Quiz Running Box -->
+            <div id="quiz-running-screen" class="hidden bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex justify-between items-center border-b pb-3">
+                    <span id="quiz-progress-text" class="font-bold text-brand-700 text-sm">Soal 1 dari 10</span>
+                    <span id="quiz-timer" class="text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-semibold">⏱️ Waktu Bebas</span>
+                </div>
+
+                <div id="quiz-question-box" class="space-y-4">
+                    <!-- Dynamic Question content -->
+                </div>
+
+                <div id="quiz-feedback-box" class="hidden p-4 rounded-xl text-sm font-semibold"></div>
+
+                <div class="flex justify-between pt-4 border-t">
+                    <button id="btn-next-quiz" onclick="nextQuizQuestion()" class="hidden bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 px-6 rounded-xl transition-all">
+                        Soal Berikutnya ➔
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Result Screen -->
+            <div id="quiz-result-screen" class="hidden bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center space-y-6">
+                <div class="text-6xl" id="quiz-result-icon">🏆</div>
+                <h3 class="text-3xl font-extrabold text-slate-800">HASIL KUIS PAI</h3>
+                
+                <div class="bg-slate-50 p-6 rounded-2xl max-w-md mx-auto space-y-3 text-left border border-slate-200">
+                    <p class="text-sm"><strong>Nama:</strong> <span id="res-name">-</span></p>
+                    <p class="text-sm"><strong>Kelas:</strong> <span id="res-class">-</span></p>
+                    <hr>
+                    <div class="grid grid-cols-2 gap-2 text-center pt-2">
+                        <div class="bg-emerald-100 p-3 rounded-xl">
+                            <span class="block text-xs text-emerald-800 font-semibold">Benar</span>
+                            <span id="res-correct" class="text-2xl font-bold text-emerald-700">0</span>
+                        </div>
+                        <div class="bg-rose-100 p-3 rounded-xl">
+                            <span class="block text-xs text-rose-800 font-semibold">Salah</span>
+                            <span id="res-wrong" class="text-2xl font-bold text-rose-700">0</span>
+                        </div>
+                    </div>
+                    <div class="text-center pt-2">
+                        <span class="block text-xs text-slate-500 font-bold uppercase">Nilai Akhir</span>
+                        <span id="res-score" class="text-4xl font-extrabold text-brand-600">0</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="res-category" class="inline-block px-4 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-800">Kategori: -</span>
+                    </div>
+                </div>
+
+                <p id="res-message" class="text-slate-700 font-medium max-w-md mx-auto text-sm"></p>
+
+                <div class="flex justify-center space-x-4">
+                    <button onclick="resetQuiz()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 px-6 rounded-xl text-sm">
+                        🔄 Ulangi Kuis
+                    </button>
+                    <button onclick="nextSection()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 px-6 rounded-xl text-sm">
+                        Lanjut ke Tantangan ➔
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 12: TANTANGAN BERPIKIR -->
+        <section id="section-12" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Tantangan Berpikir Kritikal 💡</h2>
+                <p class="text-slate-600 text-sm">Analisis kasus moral dan tentukan keputusan terbaikmu.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-amber-900 text-sm">
+                    <strong>Skenario Kasus:</strong><br>
+                    "Kamu memiliki seorang teman sekelas yang pernah menyakiti perasaanmu dengan mengejekmu di depan umum. Sekarang, ia menyadari kesalahannya dan datang kepadamu sambil membawa permohonan maaf yang sangat tulus."
+                </div>
+
+                <p class="font-bold text-slate-800 text-sm">Pertanyaan: Apa tindakan terpuji yang akan kamu lakukan?</p>
+
+                <div class="space-y-3">
+                    <button onclick="selectEthicalChoice(1)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-slate-50 transition-all text-sm font-medium">
+                        A. Menolaknya dan membalas mengejeknya agar dia merasakan hal yang sama.
+                    </button>
+                    <button onclick="selectEthicalChoice(2)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-slate-50 transition-all text-sm font-medium">
+                        B. Menerima maafnya dengan ikhlas, tidak menyimpan dendam, dan tetap menjalin hubungan pertemanan yang baik.
+                    </button>
+                    <button onclick="selectEthicalChoice(3)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-slate-50 transition-all text-sm font-medium">
+                        C. Acuh tak acuh dan tidak mau berbicara dengannya lagi selamanya.
+                    </button>
+                </div>
+
+                <div id="ethical-explanation" class="hidden p-5 bg-emerald-50 rounded-2xl border border-emerald-200 text-slate-700 text-sm space-y-2">
+                    <p class="font-bold text-emerald-900">Pembahasan Akhlak Mulia:</p>
+                    <p>Pilihan B adalah cerminan dari akhlak terpuji seorang muslim sejati. Allah SWT sangat menyukai hamba-Nya yang pemaaf.</p>
+                    <p>Memaafkan bukan berarti kita lemah, melainkan menunjukkan kedewasaan mental dan ketulusan hati untuk menjaga persaudaraan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 13: REFLEKSI DIRI -->
+        <section id="section-13" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Refleksi Diri Siswa</h2>
+                <p class="text-slate-600 text-sm">Ungpakan pemahaman dan komitmen pribadimu.</p>
+            </div>
+
+            <form id="reflection-form" onsubmit="saveReflection(event)" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Siswa:</label>
+                        <input type="text" id="ref-name" required placeholder="Nama lengkap..." class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kelas:</label>
+                        <input type="text" id="ref-class" value="6 SD" required class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">1. Apa pemahamanmu tentang pentingnya meminta maaf?</label>
+                        <textarea id="ref-q1" rows="2" required placeholder="Tuliskan di sini..." class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">2. Apa pemahamanmu tentang makna memaafkan kesalahan orang lain?</label>
+                        <textarea id="ref-q2" rows="2" required placeholder="Tuliskan di sini..." class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">3. Ceritakan pengalamanmu ketika pernah meminta maaf atau memaafkan teman:</label>
+                        <textarea id="ref-q3" rows="2" required placeholder="Tuliskan di sini..." class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">4. Apa yang akan kamu lakukan jika di masa depan kamu tidak sengaja berbuat salah?</label>
+                        <textarea id="ref-q4" rows="2" required placeholder="Tuliskan di sini..." class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl shadow-md transition-all btn-bounce">
+                    💾 SIMPAN REFLEKSI DIRI
+                </button>
+            </form>
+
+            <div id="reflection-success" class="hidden bg-emerald-100 border border-emerald-300 text-emerald-800 p-4 rounded-xl text-sm text-center font-medium">
+                ✅ Refleksi berhasil disimpan! Terima kasih sudah melakukan perenungan jujur.
+            </div>
+        </section>
+
+        <!-- HALAMAN 14: TANTANGAN KEBAIKAN (AKSI NYATA) -->
+        <section id="section-14" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Tantangan Kebaikan: Aksi Nyata 🌟</h2>
+                <p class="text-slate-600 text-sm">Lakukan minimal 3 tindakan saling memaafkan selama satu minggu ini.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-brand-50 text-brand-800">
+                                <th class="p-3 border">No</th>
+                                <th class="p-3 border">Bentuk Tindakan</th>
+                                <th class="p-3 border">Kepada Siapa</th>
+                                <th class="p-3 border">Hasil & Perasaan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="action-table-body">
+                            <tr>
+                                <td class="p-3 border text-center font-bold">1</td>
+                                <td class="p-3 border">Meminta maaf karena terlambat mengembalikan buku</td>
+                                <td class="p-3 border">Teman Sekelas</td>
+                                <td class="p-3 border">Teman tersenyum & hubungan tetap akrab</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border text-center font-bold">2</td>
+                                <td class="p-3 border">Memaafkan adik yang tidak sengaja menjatuhkan mainan</td>
+                                <td class="p-3 border">Adik Kandung</td>
+                                <td class="p-3 border">Rumah jadi damai tanpa pertengkaran</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border text-center font-bold">3</td>
+                                <td class="p-3 border">Mengakui kesalahan dan berjanji belajar lebih rajin</td>
+                                <td class="p-3 border">Orang Tua</td>
+                                <td class="p-3 border">Orang tua bangga dan memberi nasihat hangat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                    <h4 class="font-bold text-xs uppercase text-slate-500">Tambah Catatan Aksi Nyata Barumu:</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                        <input type="text" id="action-input-act" placeholder="Bentuk tindakan..." class="p-2.5 border rounded-lg text-sm">
+                        <input type="text" id="action-input-who" placeholder="Kepada siapa..." class="p-2.5 border rounded-lg text-sm">
+                        <input type="text" id="action-input-res" placeholder="Hasil & perasaan..." class="p-2.5 border rounded-lg text-sm">
+                    </div>
+                    <button onclick="addActionRow()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded-lg text-sm">
+                        + Tambah Aksi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 15: KESIMPULAN MATERI -->
+        <section id="section-15" class="section-content hidden space-y-6">
+            <div class="border-l-4 border-brand-600 pl-4 py-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">Rangkuman Kesimpulan</h2>
+                <p class="text-slate-600 text-sm">Poin-poin utama materi Hidup Damai dengan Saling Memaafkan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Maaf</strong> adalah ungkapan penuh kesadaran atas kesalahan yang telah dilakukan kepada orang lain.</p>
+                </div>
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Memaafkan</strong> berarti mengikhlaskan kesalahan orang lain dan melepaskan dendam dari hati.</p>
+                </div>
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Penyesalan</strong> membuktikan ketulusan hati dan kesiapan untuk memperbaiki diri.</p>
+                </div>
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Tata cara meminta maaf:</strong> Jujur mengakui, santun meminta maaf, dan tidak mengulangi.</p>
+                </div>
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Bertanggung jawab:</strong> Memperbaiki dampak kesalahan yang ditimbulkan.</p>
+                </div>
+                <div class="p-4 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
+                    <span class="text-2xl">📌</span>
+                    <p class="text-sm text-slate-700"><strong>Menciptakan kedamaian:</strong> Saling memaafkan mempererat persaudaraan di lingkungan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN 16: PENUTUP & LINK GURU -->
+        <section id="section-16" class="section-content hidden space-y-6">
+            <div class="gradient-header rounded-3xl p-8 md:p-12 text-white shadow-xl text-center space-y-6">
+                <div class="text-6xl">🕊️</div>
+                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight">
+                    BERANI MEMINTA MAAF,<br>IKHLAS MEMAAFKAN,<br>HIDUP MENJADI DAMAI.
+                </h2>
+                <p class="text-emerald-100 text-sm md:text-base max-w-xl mx-auto">
+                    Jadilah pribadi yang rendah hati, berani mengakui kesalahan, dan senantiasa ikhlas memaafkan sesama.
+                </p>
+
+                <div class="pt-4 flex flex-wrap justify-center gap-3">
+                    <button onclick="jumpToSection(1)" class="bg-white text-emerald-800 font-bold px-6 py-3 rounded-xl shadow-md hover:bg-emerald-50 text-sm">
+                        🔄 BELAJAR LAGI
+                    </button>
+                    <button onclick="openGoogleDoc()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-6 py-3 rounded-xl shadow-md text-sm">
+                        📖 BUKA MATERI (G-DOCS)
+                    </button>
+                    <button onclick="openGoogleLKPD()" class="bg-sky-400 hover:bg-sky-300 text-slate-900 font-bold px-6 py-3 rounded-xl shadow-md text-sm">
+                        📝 BUKA LKPD
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FIXED FOOTER NAVIGATION CONTROLS -->
+    <footer class="bg-white border-t border-slate-200 py-3 px-4 sticky bottom-0 z-40">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <button id="btn-prev" onclick="prevSection()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-xl text-xs md:text-sm flex items-center space-x-1 border">
+                <span>◀ Sebelum</span>
+            </button>
+
+            <span id="page-indicator" class="text-xs font-bold text-slate-500">Halaman 1 / 16</span>
+
+            <button id="btn-next" onclick="nextSection()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded-xl text-xs md:text-sm flex items-center space-x-1 shadow-md">
+                <span>Berikut ▶</span>
+            </button>
+        </div>
+    </footer>
+
+    <!-- MODAL PANDUAN GURU & GOOGLE DOCS LINK CONFIGURATION -->
+    <div id="guide-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 space-y-6 shadow-2xl">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h3 class="text-xl font-bold text-slate-800">📚 Panduan Guru & Integrasi Modul</h3>
+                <button onclick="closeModal('guide-modal')" class="text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-700">
+                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+                    <h4 class="font-bold text-emerald-900 mb-1">Konfigurasi Tautan Google Docs & LKPD:</h4>
+                    <p class="text-xs text-slate-600 mb-3">Guru dapat memasukkan link Google Docs (Materi) dan Google LKPD di bawah ini agar dapat diakses oleh siswa dari tombol media.</p>
+                    <div class="space-y-2">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700">URL Google Docs (Materi Lengkap):</label>
+                            <input type="url" id="input-doc-url" placeholder="https://docs.google.com/document/d/..." class="w-full p-2 border rounded-lg text-xs font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700">URL Google LKPD (Lembar Kerja):</label>
+                            <input type="url" id="input-lkpd-url" placeholder="https://docs.google.com/document/d/..." class="w-full p-2 border rounded-lg text-xs font-mono">
+                        </div>
+                        <button onclick="saveTeacherLinks()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-1.5 px-4 rounded-lg text-xs">
+                            💾 Simpan Tautan
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-800">Cara Penggunaan Media Pembelajaran:</h4>
+                    <ol class="list-decimal list-inside space-y-1 text-xs text-slate-600">
+                        <li><strong>Di Laptop / Proyektor Kelas:</strong> Buka file `index.html` langsung di browser (Chrome, Edge, Firefox). Gunakan tombol panah bawah/atas atau navigasi footer.</li>
+                        <li><strong>Di Smartphone (HP):</strong> Tampilan media ini fully responsive. Siswa dapat mengusap atau menekan tombol navigasi di bagian bawah.</li>
+                        <li><strong>Kuis & Refleksi:</strong> Jawaban kuis akan dihitung nilainya secara otomatis. Refleksi diri dapat langsung diisi dan disimpan secara lokal.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="text-right border-t pt-3">
+                <button onclick="closeModal('guide-modal')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2 px-5 rounded-xl text-xs">
+                    Tutup Panduan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 16;
+
+        // Default Google Docs Configuration Variables
+        let GOOGLE_DOC_URL = "https://docs.google.com";
+        let GOOGLE_LKPD_URL = "https://docs.google.com";
+
+        const scenarios = [
+            {
+                q: "1. Kamu tidak sengaja mematahkan pensil warna milik teman sekelasmu saat meminjamnya.",
+                options: [
+                    { text: "A. Diam-diam mengembalikannya tanpa bicara.", correct: false },
+                    { text: "B. Menyalahkan teman lain yang lewat.", correct: false },
+                    { text: "C. Meminta maaf dengan tulus dan berjanji menggantinya.", correct: true },
+                    { text: "D. Pura-pura tidak tahu sama sekali.", correct: false }
+                ],
+                explain: "Bagus! Mengakui kesalahan, meminta maaf, dan berusaha memperbaikinya adalah sikap bertanggung jawab yang mulia."
+            },
+            {
+                q: "2. Temanmu meminta maaf padamu setelah ia tidak sengaja menumpahkan air minum ke mejamu.",
+                options: [
+                    { text: "A. Memarahinya dan membalas menumpahkan air ke mejanya.", correct: false },
+                    { text: "B. Memaafkannya dengan ikhlas dan membantunya membersihkan meja.", correct: true },
+                    { text: "C. Menyimpan rasa benci dan tidak menyapanya sebulan.", correct: false },
+                    { text: "D. Melaporkannya ke guru agar dihukum berat.", correct: false }
+                ],
+                explain: "Tepat sekali! Memaafkan dengan ikhlas dan membantu bersama menciptakan kedamaian."
+            },
+            {
+                q: "3. Kamu datang terlambat saat kerja kelompok karena tertidur.",
+                options: [
+                    { text: "A. Mencari-cari alasan bohong agar tidak disalahkan.", correct: false },
+                    { text: "B. Meminta maaf jujur karena ketiduran dan siap bekerja lebih giat.", correct: true },
+                    { text: "C. Marah-marah kepada teman kelompok.", correct: false },
+                    { text: "D. Acuh tak acuh tanpa penyesalan.", correct: false }
+                ],
+                explain: "Sangat baik! Kejujuran dan rasa menyesal membuat teman-temanmu lebih mudah memaafkan."
+            },
+            {
+                q: "4. Kamu mengejek temanmu di lapangan sampai ia menangis.",
+                options: [
+                    { text: "A. Segera menghampirinya, meminta maaf tulus, dan berjanji tidak mengejek lagi.", correct: true },
+                    { text: "B. Tertawa bersama teman-teman yang lain.", correct: false },
+                    { text: "C. Menganggapnya terlalu baperan.", correct: false },
+                    { text: "D. Lari meninggalkan lapangan.", correct: false }
+                ],
+                explain: "Hebat! Menyadari bahwa perbuatan mengejek itu menyakiti dan segera minta maaf adalah akhlak terpuji."
+            },
+            {
+                q: "5. Adikmu tidak sengaja merusakkan gambar tugas seni rupamu.",
+                options: [
+                    { text: "A. Memukul adik sampai menangis.", correct: false },
+                    { text: "B. Menasihati adik dengan lembut dan memaafkan kekhilafannya.", correct: true },
+                    { text: "C. Merusakkan semua mainan adik.", correct: false },
+                    { text: "D. Membentak adik dengan kata-kata kasar.", correct: false }
+                ],
+                explain: "Luar biasa! Menasihati dengan lembut dan memaafkan adik akan menjaga kerukunan keluarga."
+            }
+        ];
+        let currentScenarioIdx = 0;
+
+        const gameItems = [
+            { text: "Meminta maaf setelah tidak sengaja menjatuhkan buku teman", isGood: true },
+            { text: "Menyimpan rasa dendam dan benci kepada teman yang salah", isGood: false },
+            { text: "Memaafkan teman yang tidak sengaja merusakkan pensil", isGood: true },
+            { text: "Menyalahkan orang lain atas kesalahan yang kita buat sendiri", isGood: false },
+            { text: "Mengakui kesalahan tanpa mencari-cari alasan pembenaran", isGood: true },
+            { text: "Berusaha mengganti atau memperbaiki barang teman yang dirusakkan", isGood: true },
+            { text: "Mengejek dan tertawa saat ada teman yang meminta maaf", isGood: false },
+            { text: "Berkomitmen dan berusaha sungguh-sungguh tidak mengulangi kesalahan", isGood: true }
+        ];
+        let currentGameIdx = 0;
+        let gameScore = 0;
+
+        const quizQuestions = [
+            {
+                q: "1. Ungkapan yang disampaikan seseorang ketika menyadari telah melakukan kesalahan disebut...",
+                options: ["A. Memaafkan", "B. Meminta Maaf", "C. Memuji", "D. Mendoakan"],
+                ans: 1
+            },
+            {
+                q: "2. Sikap mengikhlaskan kesalahan orang lain dan tidak menyimpan dendam disebut...",
+                options: ["A. Memaafkan", "B. Meminta Maaf", "C. Menyesal", "D. Mengkritik"],
+                ans: 0
+            },
+            {
+                q: "3. Salah satu ciri meminta maaf yang tulus dan jujur adalah...",
+                options: ["A. Menyalahkan teman", "B. Mencari alasan", "C. Berjanji tidak mengulangi", "D. Pura-pura tersenyum"],
+                ans: 2
+            },
+            {
+                q: "4. Perbedaan utama antara 'meminta maaf' dan 'memaafkan' adalah...",
+                options: [
+                    "A. Meminta maaf dilakukan oleh pelaku kesalahan, memaafkan dilakukan oleh yang dirugikan",
+                    "B. Meminta maaf hanya untuk anak-anak, memaafkan untuk orang dewasa",
+                    "C. Meminta maaf itu mudah, memaafkan itu dilarang",
+                    "D. Tidak ada perbedaannya sama sekali"
+                ],
+                ans: 0
+            },
+            {
+                q: "5. Mengapa kita perlu menyatakan penyesalan setelah berbuat salah?",
+                options: [
+                    "A. Agar mendapat pujian dari orang lain",
+                    "B. Menunjukkan bahwa kita sadar kesalahan dan bertanggung jawab",
+                    "C. Agar dianggap hebat oleh teman",
+                    "D. Supaya tidak perlu mengganti kerugian"
+                ],
+                ans: 1
+            },
+            {
+                q: "6. Bagaimana sikap kita jika teman yang berbuat salah datang dan meminta maaf secara tulus?",
+                options: ["A. Menolaknya dengan marah", "B. Menerima maafnya dengan ikhlas", "C. Membalas kesalahannya dulu", "D. Mengejeknya"],
+                ans: 1
+            },
+            {
+                q: "7. Akibat dari memelihara rasa dendam dan kebencian dalam hati adalah...",
+                options: ["A. Hati menjadi tenang", "B. Hubungan persahabatan merenggang dan rusak", "C. Disukai banyak orang", "D. Hidup menjadi tenteram"],
+                ans: 1
+            },
+            {
+                q: "8. Jika kamu tidak sengaja merusakkan penggaris teman, tindakan paling bertanggung jawab adalah...",
+                options: ["A. Diam saja", "B. Menyembunyikannya", "C. Meminta maaf dan menggantinya", "D. Menyalahkan adik"],
+                ans: 2
+            },
+            {
+                q: "9. Sikap rendah hati ketika berbuat salah ditunjukkan dengan...",
+                options: ["A. Berani meminta maaf tanpa gengsi", "B. Merasa diri paling benar", "C. Marah saat dinasihati", "D. Lari dari masalah"],
+                ans: 0
+            },
+            {
+                q: "10. Manfaat utama dari kebiasaan saling memaafkan di sekolah adalah...",
+                options: ["A. Suasana kelas menjadi gaduh", "B. Terciptanya suasana sekolah yang damai dan harmonis", "C. Tidak ada yang mau berteman", "D. Nilai pelajaran turun"],
+                ans: 1
+            }
+        ];
+        let quizCurrentIdx = 0;
+        let quizUserAnswers = [];
+
+        function updateNavigationUI() {
+            // Hide all sections
+            for (let i = 1; i <= totalSections; i++) {
+                const sec = document.getElementById(`section-${i}`);
+                if (sec) sec.classList.add('hidden');
+            }
+            // Show active section
+            const activeSec = document.getElementById(`section-${currentSection}`);
+            if (activeSec) activeSec.classList.remove('hidden');
+
+            // Update dropdown selector
+            document.getElementById('section-select').value = currentSection;
+
+            // Update progress bar
+            const percent = (currentSection / totalSections) * 100;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+
+            // Update page indicator text
+            document.getElementById('page-indicator').innerText = `Halaman ${currentSection} / ${totalSections}`;
+
+            // Button disabled states
+            document.getElementById('btn-prev').disabled = (currentSection === 1);
+            document.getElementById('btn-prev').classList.toggle('opacity-50', currentSection === 1);
+
+            document.getElementById('btn-next').disabled = (currentSection === totalSections);
+            document.getElementById('btn-next').classList.toggle('opacity-50', currentSection === totalSections);
+
+            // Scroll to top smooth
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextSection() {
+            if (currentSection < totalSections) {
+                currentSection++;
+                updateNavigationUI();
+            }
+        }
+
+        function prevSection() {
+            if (currentSection > 1) {
+                currentSection--;
+                updateNavigationUI();
+            }
+        }
+
+        function jumpToSection(secNum) {
+            currentSection = parseInt(secNum);
+            updateNavigationUI();
+        }
+
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden');
+        }
+
+        function checkQuickAnswer(isGood) {
+            const fb = document.getElementById('quick-feedback');
+            fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+            if (isGood) {
+                fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                fb.innerHTML = "✅ <strong>Jawaban Tepat!</strong> Meminta maaf secara jujur tanpa alasan pembenaran adalah bentuk tanggung jawab yang sangat terpuji.";
+            } else {
+                fb.classList.add('bg-rose-100', 'text-rose-800');
+                fb.innerHTML = "❌ <strong>Kurang Tepat.</strong> Meminta maaf dan mengakui kekhilafan adalah tindakan terpuji, bukan perbuatan buruk.";
+            }
+        }
+
+        function renderScenario() {
+            const container = document.getElementById('scenario-container');
+            if (!container) return;
+
+            const sc = scenarios[currentScenarioIdx];
+            container.innerHTML = `
+                <div class="flex justify-between items-center text-xs font-bold text-slate-500 border-b pb-2">
+                    <span>Skenario Kasus ${currentScenarioIdx + 1} dari ${scenarios.length}</span>
+                    <span>PAI Kelas 6</span>
+                </div>
+                <h3 class="font-bold text-slate-800 text-base md:text-lg">${sc.q}</h3>
+                <div class="space-y-3">
+                    ${sc.options.map((opt, idx) => `
+                        <button onclick="checkScenarioChoice(${idx})" class="w-full text-left p-3.5 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-slate-50 transition-all text-sm font-medium">
+                            ${opt.text}
+                        </button>
+                    `).join('')}
+                </div>
+                <div id="scenario-fb" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+            `;
+        }
+
+        function checkScenarioChoice(optIdx) {
+            const sc = scenarios[currentScenarioIdx];
+            const fb = document.getElementById('scenario-fb');
+            fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if (sc.options[optIdx].correct) {
+                fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                fb.innerHTML = `✅ ${sc.explain}`;
+            } else {
+                fb.classList.add('bg-rose-100', 'text-rose-800');
+                fb.innerHTML = `❌ Kurang tepat. Pilihan ini belum mencerminkan kelapangan dada dan rasa tanggung jawab. Coba renungkan pilihan terbaik!`;
+            }
+
+            // Auto advance next scenario after delay
+            setTimeout(() => {
+                if (currentScenarioIdx < scenarios.length - 1) {
+                    currentScenarioIdx++;
+                    renderScenario();
+                }
+            }, 3000);
+        }
+
+        function renderGameCard() {
+            const container = document.getElementById('game-card-container');
+            if (!container) return;
+
+            if (currentGameIdx >= gameItems.length) {
+                container.innerHTML = `
+                    <div class="text-center p-6 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                        <div class="text-4xl">🎉</div>
+                        <h3 class="font-bold text-emerald-900 text-lg">Selamat! Game Selesai!</h3>
+                        <p class="text-sm text-emerald-800">Skor Akhirmu: <strong>${gameScore} / ${gameItems.length}</strong></p>
+                        <button onclick="resetGame()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-6 rounded-xl text-sm">
+                            Play Again
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const item = gameItems[currentGameIdx];
+            container.innerHTML = `
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center space-y-4">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pernyataan #${currentGameIdx + 1}</span>
+                    <p class="text-base md:text-lg font-bold text-slate-800">"${item.text}"</p>
+                    <div class="flex justify-center space-x-4 pt-2">
+                        <button onclick="answerGame(true)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-md btn-bounce flex items-center space-x-2">
+                            <span>✅ SIKAP BAIK</span>
+                        </button>
+                        <button onclick="answerGame(false)" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-6 rounded-xl shadow-md btn-bounce flex items-center space-x-2">
+                            <span>❌ BUKAN SIKAP BAIK</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function answerGame(userSaysGood) {
+            const item = gameItems[currentGameIdx];
+            if (userSaysGood === item.isGood) {
+                gameScore++;
+            }
+            document.getElementById('game-score').innerText = gameScore;
+            currentGameIdx++;
+            renderGameCard();
+        }
+
+        function resetGame() {
+            currentGameIdx = 0;
+            gameScore = 0;
+            document.getElementById('game-score').innerText = '0';
+            renderGameCard();
+        }
+
+        function startQuiz() {
+            const name = document.getElementById('quiz-student-name').value.trim();
+            if (!name) {
+                alert("Harap masukkan nama lengkapmu terlebih dahulu!");
+                return;
+            }
+            document.getElementById('quiz-start-screen').classList.add('hidden');
+            document.getElementById('quiz-running-screen').classList.remove('hidden');
+            quizCurrentIdx = 0;
+            quizUserAnswers = [];
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const qBox = document.getElementById('quiz-question-box');
+            const fbBox = document.getElementById('quiz-feedback-box');
+            const btnNext = document.getElementById('btn-next-quiz');
+
+            fbBox.classList.add('hidden');
+            btnNext.classList.add('hidden');
+
+            document.getElementById('quiz-progress-text').innerText = `Soal ${quizCurrentIdx + 1} dari ${quizQuestions.length}`;
+
+            const qData = quizQuestions[quizCurrentIdx];
+            qBox.innerHTML = `
+                <h3 class="font-bold text-slate-800 text-base md:text-lg">${qData.q}</h3>
+                <div class="space-y-3 pt-2">
+                    ${qData.options.map((opt, idx) => `
+                        <button onclick="selectQuizOption(${idx})" class="w-full text-left p-3.5 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-slate-50 transition-all text-sm font-medium">
+                            ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectQuizOption(optIdx) {
+            const qData = quizQuestions[quizCurrentIdx];
+            const fbBox = document.getElementById('quiz-feedback-box');
+            const btnNext = document.getElementById('btn-next-quiz');
+
+            quizUserAnswers[quizCurrentIdx] = optIdx;
+
+            const isCorrect = (optIdx === qData.ans);
+            fbBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if (isCorrect) {
+                fbBox.classList.add('bg-emerald-100', 'text-emerald-800');
+                fbBox.innerHTML = "✅ <strong>Tepat skali!</strong> Jawabanmu benar.";
+            } else {
+                fbBox.classList.add('bg-rose-100', 'text-rose-800');
+                fbBox.innerHTML = `❌ <strong>Kurang tepat.</strong> Jawaban benar: ${qData.options[qData.ans]}`;
+            }
+
+            btnNext.classList.remove('hidden');
+        }
+
+        function nextQuizQuestion() {
+            if (quizCurrentIdx < quizQuestions.length - 1) {
+                quizCurrentIdx++;
+                renderQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-running-screen').classList.add('hidden');
+            document.getElementById('quiz-result-screen').classList.remove('hidden');
+
+            let correctCount = 0;
+            quizQuestions.forEach((q, idx) => {
+                if (quizUserAnswers[idx] === q.ans) {
+                    correctCount++;
+                }
+            });
+
+            const wrongCount = quizQuestions.length - correctCount;
+            const finalScore = Math.round((correctCount / quizQuestions.length) * 100);
+
+            const studentName = document.getElementById('quiz-student-name').value;
+            const studentClass = document.getElementById('quiz-student-class').value;
+
+            document.getElementById('res-name').innerText = studentName;
+            document.getElementById('res-class').innerText = studentClass;
+            document.getElementById('res-correct').innerText = correctCount;
+            document.getElementById('res-wrong').innerText = wrongCount;
+            document.getElementById('res-score').innerText = finalScore;
+
+            let category = "";
+            let msg = "";
+            let icon = "🏆";
+
+            if (finalScore >= 90) {
+                category = "Sangat Baik";
+                msg = "Luar biasa! Kamu telah memahami materi Hidup Damai dengan Saling Memaafkan dengan sangat sempurna!";
+                icon = "🌟";
+            } else if (finalScore >= 80) {
+                category = "Baik";
+                msg = "Bagus sekali! Pemahamanmu sudah sangat baik. Teruskan semangat belajarmu!";
+                icon = "👏";
+            } else if (finalScore >= 70) {
+                category = "Cukup";
+                msg = "Cukup baik. Baca kembali materi untuk memperkuat pemahamanmu ya!";
+                icon = "👍";
+            } else {
+                category = "Perlu Bimbingan";
+                msg = "Jangan berkecil hati! Pelajari kembali materi dari awal dan ulangi kuis ini.";
+                icon = "📖";
+            }
+
+            document.getElementById('res-category').innerText = `Kategori: ${category}`;
+            document.getElementById('res-message').innerText = msg;
+            document.getElementById('quiz-result-icon').innerText = icon;
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result-screen').classList.add('hidden');
+            document.getElementById('quiz-start-screen').classList.remove('hidden');
+        }
+
+        function selectEthicalChoice(choiceNum) {
+            const exp = document.getElementById('ethical-explanation');
+            exp.classList.remove('hidden');
+        }
+
+        function saveReflection(e) {
+            e.preventDefault();
+            document.getElementById('reflection-success').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('reflection-success').classList.add('hidden');
+            }, 4000);
+        }
+
+        function addActionRow() {
+            const act = document.getElementById('action-input-act').value.trim();
+            const who = document.getElementById('action-input-who').value.trim();
+            const res = document.getElementById('action-input-res').value.trim();
+
+            if (!act || !who || !res) {
+                alert("Harap isi semua kolom aksi!");
+                return;
+            }
+
+            const tbody = document.getElementById('action-table-body');
+            const rowCount = tbody.rows.length + 1;
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="p-3 border text-center font-bold">${rowCount}</td>
+                <td class="p-3 border">${act}</td>
+                <td class="p-3 border">${who}</td>
+                <td class="p-3 border">${res}</td>
+            `;
+            tbody.appendChild(tr);
+
+            // Clear inputs
+            document.getElementById('action-input-act').value = '';
+            document.getElementById('action-input-who').value = '';
+            document.getElementById('action-input-res').value = '';
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function saveTeacherLinks() {
+            const docUrl = document.getElementById('input-doc-url').value.trim();
+            const lkpdUrl = document.getElementById('input-lkpd-url').value.trim();
+
+            if (docUrl) GOOGLE_DOC_URL = docUrl;
+            if (lkpdUrl) GOOGLE_LKPD_URL = lkpdUrl;
+
+            alert("Tautan Google Docs & LKPD berhasil diperbarui!");
+            closeModal('guide-modal');
+        }
+
+        function openGoogleDoc() {
+            window.open(GOOGLE_DOC_URL, "_blank");
+        }
+
+        function openGoogleLKPD() {
+            window.open(GOOGLE_LKPD_URL, "_blank");
+        }
+
+        window.onload = function() {
+            updateNavigationUI();
+            renderScenario();
+            renderGameCard();
+        };
+    </script>
+</body>
+</html>
